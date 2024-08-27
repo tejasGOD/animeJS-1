@@ -2,6 +2,15 @@ document.addEventListener("click", function(event) {
   eyes(event.clientX, event.clientY, 20 + Math.random() * 50, event);
 });
 
+  canvas.style.position = "absolute";
+  canvas.style.left = (x - size - 5) + "px";
+  canvas.style.top = (y - size  / 2 - 5) + "px";
+  canvas.style.zIndex = "1000";
+  canvas.style.pointerEvents = "none";
+  canvas.style.zIndex = "1000";
+  canvas.style.pointerEvents = "none";
+  canvas.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+
 
 function eyes(x, y, size, event) {
   var canvas = document.createElement("canvas"),
