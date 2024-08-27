@@ -2,14 +2,6 @@ document.addEventListener("click", function(event) {
   eyes(event.clientX, event.clientY, 20 + Math.random() * 50, event);
 });
 
-  canvas.style.position = "absolute";
-  canvas.style.left = (x - size - 5) + "px";
-  canvas.style.top = (y - size  / 2 - 5) + "px";
-  canvas.style.zIndex = "1000";
-  canvas.style.pointerEvents = "none";
-  canvas.style.zIndex = "1000";
-  canvas.style.pointerEvents = "none";
-  canvas.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
 
 
 function eyes(x, y, size, event) {
@@ -19,7 +11,9 @@ function eyes(x, y, size, event) {
   canvas.style.position = "absolute";
   canvas.style.left = (x - size - 5) + "px";
   canvas.style.top = (y - size  / 2 - 5) + "px";
-  
+  canvas.style.backgroundColor = "hsl(" + Math.random() * 60 + ", 90%, 80%)";
+
+
   var rect = canvas.getBoundingClientRect();
   canvas.width = size * 2 + 10;
   canvas.height = size + 10;
@@ -46,9 +40,11 @@ function eyes(x, y, size, event) {
     context.beginPath();
     context.arc(0, 0, size / 2, 0, Math.PI * 2);
     context.stroke();
+    context.fillStyle = "hsl(" + Math.random() * 60 + ", 90%, 10%)";
     context.beginPath();
     context.arc(size * 0.4, 0, size * 0.1, 0, Math.PI * 2);
     context.fill();
+    context.fillStyle = "hsl(" + Math.random() * 60 + ", 90%, 10%)";
     context.restore();
   }
 }
